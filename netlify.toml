@@ -1,6 +1,0 @@
-[[redirects]]
-  from = "/fcc/*"
-  to = "https://responsive-web-fcc.netlify.app/fcc/:splat"
-  status = 200
-
-  
