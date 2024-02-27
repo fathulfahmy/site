@@ -1,3 +1,4 @@
+import potrait from "./assets/potrait_sm.png";
 function About() {
   return (
     <>
@@ -36,7 +37,11 @@ function About() {
             </p>
           </section>
         </div>
-        <div className="max-lg:hidden lg:border-l-[1px] col-span-4"></div>
+        <div className="max-lg:hidden lg:border-l-[1px] col-span-4">
+          <div className="flex flex-col pt-[64px] px-[20%] border-b-[1px]">
+            <img src={potrait} className="object-contain" />
+          </div>
+        </div>
       </div>
     </>
   );
