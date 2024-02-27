@@ -36,7 +36,7 @@ function About() {
             </p>
           </section>
         </div>
-        <div className="max-lg:hidden lg:border-l-[1px] col-span-4">Image</div>
+        <div className="max-lg:hidden lg:border-l-[1px] col-span-4"></div>
       </div>
     </>
   );
