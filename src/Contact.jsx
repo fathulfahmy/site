@@ -124,7 +124,7 @@ function Contact() {
             Instagram
           </a>
           <a
-            href="https://linked.in/fathulfahmy"
+            href="https://www.linkedin.com/in/fathulfahmy/"
             target="_blank"
             className="underline hover:no-underline"
           >
