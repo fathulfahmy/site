@@ -8,7 +8,7 @@ function Navbar() {
   }
   return (
     <>
-      <nav className="fixed z-10 w-full bg-neutral-50">
+      <nav className="fixed z-10 w-full border-t-[1px] bg-neutral-50">
         <div className="lg:grid grid-cols-12">
           <div className="col-span-6">
             <div className="border-b-[1px] flex">
