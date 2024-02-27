@@ -7,7 +7,7 @@
     @apply text-neutral-900 border-neutral-900 selection:text-neutral-900 selection:bg-yellow-300;
   }
   body {
-    @apply bg-neutral-50 text-base lg:text-lg;
+    @apply min-w-[320px] bg-neutral-50 text-base lg:text-lg;
   }
   nav,
   footer {
