@@ -1,10 +1,10 @@
-import Navbar from "./Navbar.jsx";
-import Splash from "./Splash.jsx";
-import Projects from "./Projects.jsx";
-import Title from "./Title.jsx";
-import About from "./About.jsx";
-import Contact from "./Contact.jsx";
-import Footer from "./Footer.jsx";
+import Navbar from "./components/Navbar.jsx";
+import Splash from "./components/Splash.jsx";
+import Projects from "./components/Projects.jsx";
+import Title from "./components/Title.jsx";
+import About from "./components/About.jsx";
+import Contact from "./components/Contact.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   return (

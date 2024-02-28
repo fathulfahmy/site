@@ -1,22 +1,20 @@
 function List(props) {
   return (
-    <>
-      <div className="border-b-[1px] border-neutral-300 grid max-lg:gap-[64px] lg:grid-cols-12 py-[32px] lg:py-[64px] px-[16px] lg:px-[40px]">
-        <div className="lg:col-span-10">
-          <h3 className="font-semibold tracking-tight">{props.title}</h3>
-          <p>{props.desc}</p>
-        </div>
-        <div className="max-lg:text-right lg:col-span-2">
-          <a
-            href={`${props.linkto}`}
-            target="_blank"
-            className="underline hover:no-underline"
-          >
-            Open in {props.platform}
-          </a>
-        </div>
+    <div className="border-b-[1px] border-neutral-300 grid py-[32px] px-[16px] max-lg:gap-[64px] lg:grid-cols-12 lg:py-[64px] lg:px-[40px]">
+      <div className="lg:col-span-10">
+        <h3>{props.title}</h3>
+        <p>{props.desc}</p>
       </div>
-    </>
+      <div className="max-lg:text-right lg:col-span-2">
+        <a
+          href={`${props.linkto}`}
+          target="_blank"
+          className="underline hover:no-underline"
+        >
+          Open in {props.platform}
+        </a>
+      </div>
+    </div>
   );
 }
 
