@@ -1,8 +1,8 @@
-import useScreenSize from "./useScreenSize.js";
+import { useWindowSize } from "@uidotdev/usehooks";
 import potrait from "./assets/potrait_lg.png";
 
 function Splash() {
-  const screenSize = useScreenSize();
+  const screenSize = useWindowSize();
 
   return (
     <>
