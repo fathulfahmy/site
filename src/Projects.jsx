@@ -42,10 +42,10 @@ function Projects() {
         linkto="https://marketplace.visualstudio.com/items?itemName=fathulfahmy.lunarkeymap"
       />
       <List
-        title="Catppuccin"
-        desc="GlazeWM color theme and configuration written in YAML."
-        platform="GitHub"
-        linkto="https://github.com/catppuccin/glazewm"
+        title="Min Keyboard Tester"
+        desc="Open-source keyboard detection web application."
+        platform="Browser"
+        linkto="https://minkeyboardtester.netlify.app"
       />
     </>
   );
