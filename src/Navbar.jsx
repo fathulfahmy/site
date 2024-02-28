@@ -12,7 +12,7 @@ function Navbar() {
         <div className="lg:grid grid-cols-12">
           <div className="col-span-6">
             <div className="border-b-[1px] flex">
-              <a href="#" className="p-[16px] grow hover:bg-neutral-300 ">
+              <a href="#" className="p-[16px] grow hover:bg-neutral-300 " onClick={toggleOpen}>
                 Fathul Fahmy
               </a>
               <button
