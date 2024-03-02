@@ -3,7 +3,7 @@ import potrait from "../assets/potrait_lg.png";
 
 function Text() {
   return (
-    <div className="flex min-h-[32rem] flex-col p-4 pt-20 md:h-screen md:px-8 md:pt-20">
+    <div className="flex min-h-[32rem] flex-col p-4 pt-20 lg:h-screen lg:px-8 lg:pt-20">
       <div className="grow pb-16">
         <img src={typography} />
       </div>
@@ -23,11 +23,11 @@ function Image() {
 }
 function Home() {
   return (
-    <div id="#" className="md:grid md:grid-cols-12">
-      <div className="md:col-span-6">
+    <div id="#" className="lg:grid lg:grid-cols-12">
+      <div className="lg:col-span-6">
         <Text />
       </div>
-      <div className="h-[32rem] min-h-[32rem] max-md:border-t md:col-span-6 md:h-screen md:border-l">
+      <div className="h-[32rem] min-h-[32rem] max-lg:border-t lg:col-span-6 lg:h-screen lg:border-l">
         <Image />
       </div>
     </div>

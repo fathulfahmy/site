@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="border-t p-4 pb-16 max-md:text-center md:p-8 md:pt-20">
+    <footer className="border-t p-4 pb-16 max-lg:text-center lg:p-8 lg:pt-20">
       <p>
         fathulfahmy/site{" "}
         <a
