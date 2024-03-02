@@ -33,7 +33,7 @@ function Image() {
     <div className="border-b p-8 pb-0">
       <img
         src={potrait}
-        className="mx-auto my-0 h-full object-contain object-bottom"
+        className="mx-auto my-0 min-h-full object-contain object-bottom"
       />
     </div>
   );
