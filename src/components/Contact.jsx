@@ -4,7 +4,7 @@ import SubmitBtn from "./SubmitBtn";
 
 function Input({ id, label, type, placeholder }) {
   return (
-    <div className="mb-8 md:mb-12">
+    <div className="mb-8 lg:mb-12">
       <label htmlFor={id} className="pb-1">
         {label}
       </label>
@@ -61,7 +61,7 @@ function Form() {
 
   return (
     <form id="contact_form" ref={form} onSubmit={sendEmail}>
-      <div className="block p-4 md:p-8">
+      <div className="block p-4 lg:p-8">
         <Input id="user_name" type="text" label="Name" placeholder="John Doe" />
         <Input
           id="user_email"
@@ -69,7 +69,7 @@ function Form() {
           label="Email"
           placeholder="john@doe.com"
         />
-        <div className=" mb-8 md:mb-12">
+        <div className=" mb-8 lg:mb-12">
           <label htmlFor="message" className="">
             Your message
           </label>
@@ -99,7 +99,7 @@ function SocialBtn({ href, platform }) {
 
 function Socials() {
   return (
-    <div className="p-4 max-md:text-center md:p-8">
+    <div className="p-4 max-lg:text-center lg:p-8">
       <h3 className="mb-6">Socials</h3>
       <SocialBtn
         href="https://www.behance.net/fathulfahmy"
@@ -120,12 +120,12 @@ function Socials() {
 
 function Contact() {
   return (
-    <div className="md:grid md:grid-cols-12">
-      <div className="md:col-span-8">
+    <div className="lg:grid lg:grid-cols-12">
+      <div className="lg:col-span-8">
         <Form />
       </div>
-      <div className="md:col-span-4 md:border-l">
-        <div className="md:col-start-1">
+      <div className="lg:col-span-4 lg:border-l">
+        <div className="lg:col-start-1">
           <Socials />
         </div>
       </div>
