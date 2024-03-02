@@ -1,17 +1,15 @@
 function Footer() {
   return (
-    <footer className="p-[16px] pb-[64px]">
-      <p className="">
-        Made by Fathul Fahmy.{" "}
-        <span>
-          <a
-            href="http://github.com/fathulfahmy/site"
-            target="_blank"
-            className="underline hover:no-underline"
-          >
-            View source code
-          </a>
-        </span>
+    <footer className="border-t p-4 pt-12 md:p-8 md:pt-16">
+      <p>
+        fathulfahmy/site{" "}
+        <a
+          href="https://github.com/fathulfahmy/site"
+          target="_blank"
+          className="underline hover:no-underline"
+        >
+          View code on GitHub
+        </a>
       </p>
     </footer>
   );

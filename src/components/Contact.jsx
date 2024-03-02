@@ -1,15 +1,34 @@
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-
 import SubmitBtn from "./SubmitBtn";
 
-function Contact() {
+function Input({ id, label, type, placeholder }) {
+  return (
+    <div className="mb-8 md:mb-12">
+      <label htmlFor={id} className="pb-1">
+        {label}
+      </label>
+      <input
+        name={id}
+        id={id}
+        type={type}
+        placeholder={placeholder}
+        className="input"
+        required
+      />
+    </div>
+  );
+}
+
+function Form() {
   // emailJS
   const YOUR_SERVICE_ID = "service_vq8b86a";
   const YOUR_TEMPLATE_ID = "contact_form";
   const YOUR_PUBLIC_KEY = "6IeDkt_ZMpydWNUp9";
 
   const form = useRef();
+
+  const [status, setStatus] = useState("default");
 
   const sendEmail = (e) => {
     setStatus("sending");
@@ -25,103 +44,90 @@ function Contact() {
           setStatus("success");
 
           setTimeout(() => {
-            setStatus("default");
+            form.current.reset();
+            setStatus("resend");
           }, 3000);
         },
         (error) => {
-          console.log("FAILED...", error.text);
+          console.log("FAILED!", error.text);
           setStatus("failed");
 
           setTimeout(() => {
-            setStatus("default");
+            setStatus("retry");
           }, 3000);
-        }
+        },
       );
   };
 
-  const [status, setStatus] = useState("default");
   return (
-    <div className="lg:grid lg:grid-cols-12">
-      <div className="lg:col-span-8">
-        <form
-          id="contact_form"
-          className="flex flex-col gap-[64px] py-[64px] px-[16px] lg:py-[64px] lg:px-[40px]"
-          ref={form}
-          onSubmit={sendEmail}
-        >
-          <div>
-            <label htmlFor="user_name" className="contact__heading">
-              Name
-            </label>
-            <input
-              id="user_name"
-              name="user_name"
-              type="text"
-              placeholder="John Doe"
-              className="contact__input"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="user_email" className="contact__heading">
-              Email
-            </label>
-            <input
-              id="user_email"
-              name="user_email"
-              type="email"
-              placeholder="john@doe.com"
-              className="contact__input"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="message" className="contact__heading">
-              Your message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows="3"
-              placeholder="Hello Fathul ... "
-              className="contact__input"
-              required
-            ></textarea>
-          </div>
-        </form>
-        <SubmitBtn status={status} />
+    <form id="contact_form" ref={form} onSubmit={sendEmail}>
+      <div className="block p-4 md:p-8">
+        <Input id="user_name" type="text" label="Name" placeholder="John Doe" />
+        <Input
+          id="user_email"
+          type="email"
+          label="Email"
+          placeholder="john@doe.com"
+        />
+        <div className=" mb-8 md:mb-12">
+          <label htmlFor="message" className="">
+            Your message
+          </label>
+          <textarea
+            name="message"
+            id="message"
+            placeholder="Hello Fathul ..."
+            className="input"
+            required
+          ></textarea>
+        </div>
       </div>
-      <div className="lg:col-span-1 lg:border-l-[1px] lg:border-b-[1px]"></div>
-      <div className="border-b-[1px] flex flex-col gap-[32px] py-[64px] max-lg:text-center max-lg:px-[16px] lg:col-span-3 lg:pr-[40px]">
-        <h3>Socials</h3>
-        <a
-          href="https://www.behance.net/fathulfahmy"
-          target="_blank"
-          className="underline hover:no-underline"
-        >
-          Behance
-        </a>
-        <a
-          href="https://github.com/fathulfahmy"
-          target="_blank"
-          className="underline hover:no-underline"
-        >
-          GitHub
-        </a>
-        <a
-          href="https://instagram.com/fathulfahmy"
-          target="_blank"
-          className="underline hover:no-underline"
-        >
-          Instagram
-        </a>
-        <a
-          href="https://www.linkedin.com/in/fathulfahmy/"
-          target="_blank"
-          className="underline hover:no-underline"
-        >
-          LinkedIn
-        </a>
+      <SubmitBtn status={status} />
+    </form>
+  );
+}
+
+function SocialBtn({ href, platform }) {
+  return (
+    <div className="mb-4">
+      <a href={href} target="_blank">
+        <div className="button w-1/2 text-center">{platform}</div>
+      </a>
+    </div>
+  );
+}
+
+function Socials() {
+  return (
+    <div className="p-4 max-md:text-center md:p-8">
+      <h3 className="mb-6">Socials</h3>
+      <SocialBtn
+        href="https://www.behance.net/fathulfahmy"
+        platform="Behance"
+      />
+      <SocialBtn href="https://github.com/fathulfahmy" platform="GitHub" />
+      <SocialBtn
+        href="https://instagram.com/fathulfahmy"
+        platform="Instagram"
+      />
+      <SocialBtn
+        href="https://www.linkedin.com/in/fathulfahmy/"
+        platform="LinkedIn"
+      />
+    </div>
+  );
+}
+
+function Contact() {
+  return (
+    <div className="md:grid md:grid-cols-12">
+      <div className="md:col-span-8">
+        <Form />
+      </div>
+      <div className="md:col-span-4 md:border-l">
+        <div className="md:col-start-1">
+          <Socials />
+        </div>
       </div>
     </div>
   );

@@ -1,21 +1,21 @@
-import Navbar from "./components/Navbar.jsx";
-import Splash from "./components/Splash.jsx";
-import Projects from "./components/Projects.jsx";
-import Title from "./components/Title.jsx";
-import About from "./components/About.jsx";
-import Contact from "./components/Contact.jsx";
-import Footer from "./components/Footer.jsx";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Projects from "./components/Projects";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import Title from "./components/Title";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Splash />
-      <Title id="projects" text="Projects" bgColor="bg-red-500" />
+      <Home />
+      <Title id="projects" text="Projects" />
       <Projects />
-      <Title id="about" text="About" bgColor="bg-green-500" />
+      <Title id="about" text="About" />
       <About />
-      <Title id="contact" text="Contact" bgColor="bg-blue-500" />
+      <Title id="contact" text="Contact" />
       <Contact />
       <Footer />
     </>

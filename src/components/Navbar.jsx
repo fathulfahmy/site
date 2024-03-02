@@ -1,73 +1,73 @@
 import { useState } from "react";
-import Hamburger from "./Hamburger.jsx";
-import Close from "./Close.jsx";
+import Hamburger from "./icons/Hamburger.jsx";
+import Close from "./icons/Close.jsx";
+
+function Main({ isOpen, closeNav, toggleNav }) {
+  return (
+    <div className="flex border-b">
+      <a href="#" className="grow p-4" onClick={closeNav}>
+        Fathul Fahmy
+      </a>
+      <button className="border-l p-4 md:hidden" onClick={toggleNav}>
+        {isOpen ? <Close /> : <Hamburger />}
+      </button>
+    </div>
+  );
+}
+
+function VerticalMenu({ isOpen, closeNav }) {
+  if (isOpen) {
+    return (
+      <div className="md:hidden">
+        <a href="#projects" onClick={closeNav} className="navbar__tab">
+          Projects
+        </a>
+        <a href="#about" onClick={closeNav} className="navbar__tab">
+          About
+        </a>
+        <a href="#contact" onClick={closeNav} className="navbar__tab">
+          Contact
+        </a>
+      </div>
+    );
+  }
+}
+
+function HorizontalMenu() {
+  return (
+    <div className="max-md:hidden md:grid md:grid-cols-3">
+      <a href="#projects" className="navbar__tab">
+        Projects
+      </a>
+      <a href="#about" className="navbar__tab">
+        About
+      </a>
+      <a href="#contact" className="navbar__tab">
+        Contact
+      </a>
+    </div>
+  );
+}
 
 function Navbar() {
   const [isOpen, setOpen] = useState(false);
+
   function toggleNav() {
     setOpen(!isOpen);
   }
+
   function closeNav() {
     setOpen(false);
   }
+
   return (
-    <nav className="fixed z-10 w-full border-t-[1px] bg-neutral-50">
-      <div className="lg:grid lg:grid-cols-12">
-        <div className="lg:col-span-6">
-          <div className="border-b-[1px] flex">
-            <a
-              href="#"
-              className="p-[16px] grow hover:bg-neutral-300 "
-              onClick={closeNav}
-            >
-              Fathul Fahmy
-            </a>
-            <button
-              className="p-[16px] border-l-[1px] hover:bg-neutral-300 lg:hidden "
-              onClick={toggleNav}
-            >
-              {isOpen ? <Close /> : <Hamburger />}
-            </button>
-          </div>
-        </div>
-
-        {isOpen && (
-          <div className="max-lg:block lg:hidden">
-            <a href="#projects" onClick={toggleNav}>
-              <div className="navbar__tabs hover:bg-red-300">
-                <p className="text-center">Projects</p>
-              </div>
-            </a>
-            <a href="#about" onClick={toggleNav}>
-              <div className="navbar__tabs hover:bg-green-300">
-                <p className="text-center">About</p>
-              </div>
-            </a>
-            <a href="#contact" onClick={toggleNav}>
-              <div className="navbar__tabs hover:bg-blue-300">
-                <p className="text-center">Contact</p>
-              </div>
-            </a>
-          </div>
-        )}
-
-        <div className="max-lg:hidden lg:col-span-6 lg:grid lg:grid-cols-3">
-          <a href="#projects">
-            <div className="navbar__tabs hover:bg-red-300">
-              <p className="text-center">Projects</p>
-            </div>
-          </a>
-          <a href="#about">
-            <div className="navbar__tabs hover:bg-green-300">
-              <p className="text-center">About</p>
-            </div>
-          </a>
-          <a href="#contact">
-            <div className="navbar__tabs hover:bg-blue-300">
-              <p className="text-center">Contact</p>
-            </div>
-          </a>
-        </div>
+    <nav className="fixed w-full border-t bg-neutral-50 md:grid md:grid-cols-12">
+      <div className="md:col-span-6">
+        <Main isOpen={isOpen} closeNav={closeNav} toggleNav={toggleNav} />
+      </div>
+      <div className="md:col-span-6">
+        <VerticalMenu isOpen={isOpen} closeNav={closeNav} />
+        <HorizontalMenu />
       </div>
     </nav>
   );

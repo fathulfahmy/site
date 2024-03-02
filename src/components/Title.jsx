@@ -1,12 +1,10 @@
-function Title(props) {
+function Title({ id, text }) {
   return (
     <div
-      id={props.id}
-      className={`border-b-[1px] ${props.bgColor} px-[16px] lg:px-[40px] pt-[56px] pb-[16px]`}
+      id={id}
+      className="border-y bg-primary px-4 pb-2 pt-14 text-neutral-50 md:px-8"
     >
-      <h2 className="text-neutral-50 font-semibold tracking-tight">
-        {props.text}
-      </h2>
+      <h2>{text}</h2>
     </div>
   );
 }
