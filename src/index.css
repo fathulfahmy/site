@@ -56,11 +56,11 @@
 
 @layer components {
   .contact__submit {
-    @apply w-full p-4 text-center font-bold transition-all max-lg:border-b;
+    @apply w-full p-4 text-center font-bold transition-all max-md:border-b;
   }
 
   .navbar__tab {
-    @apply block border-b p-4 transition-all hover:bg-neutral-300 lg:border-l lg:text-center;
+    @apply block border-b p-4 transition-all hover:bg-neutral-300 md:border-l md:text-center;
   }
 
   .button {

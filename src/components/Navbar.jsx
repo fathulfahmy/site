@@ -8,7 +8,7 @@ function Main({ isOpen, closeNav, toggleNav }) {
       <a href="#" className="grow p-4" onClick={closeNav}>
         Fathul Fahmy
       </a>
-      <button className="border-l p-4 lg:hidden" onClick={toggleNav}>
+      <button className="border-l p-4 md:hidden" onClick={toggleNav}>
         {isOpen ? <Close /> : <Hamburger />}
       </button>
     </div>
@@ -18,7 +18,7 @@ function Main({ isOpen, closeNav, toggleNav }) {
 function VerticalMenu({ isOpen, closeNav }) {
   if (isOpen) {
     return (
-      <div className="lg:hidden">
+      <div className="md:hidden">
         <a href="#projects" onClick={closeNav} className="navbar__tab">
           Projects
         </a>
@@ -35,7 +35,7 @@ function VerticalMenu({ isOpen, closeNav }) {
 
 function HorizontalMenu() {
   return (
-    <div className="max-lg:hidden lg:grid lg:grid-cols-3">
+    <div className="max-md:hidden md:grid md:grid-cols-3">
       <a href="#projects" className="navbar__tab">
         Projects
       </a>
@@ -61,11 +61,11 @@ function Navbar() {
   }
 
   return (
-    <nav className="fixed w-full border-t bg-neutral-50 lg:grid lg:grid-cols-12">
-      <div className="lg:col-span-6">
+    <nav className="fixed w-full border-t bg-neutral-50 md:grid md:grid-cols-12">
+      <div className="md:col-span-6">
         <Main isOpen={isOpen} closeNav={closeNav} toggleNav={toggleNav} />
       </div>
-      <div className="lg:col-span-6">
+      <div className="md:col-span-6">
         <VerticalMenu isOpen={isOpen} closeNav={closeNav} />
         <HorizontalMenu />
       </div>
