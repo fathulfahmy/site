@@ -1,8 +1,8 @@
-function Item({ title, desc, platform, href }) {
+function Card({ title, desc, platform, href }) {
   return (
     <div className="flex h-72 flex-col p-4 lg:h-80 lg:p-8">
       <div className="grow">
-        <h3 className="pb-1">{title}</h3>
+        <h3 className="mb-1">{title}</h3>
         <p>{desc}</p>
       </div>
       <div className="text-right">
@@ -18,7 +18,7 @@ function Projects() {
   return (
     <div className="lg:grid lg:grid-cols-12">
       <div className="border-b lg:col-span-6">
-        <Item
+        <Card
           title="Tournament Management System"
           desc="Developed a web-based event registration and administration platform to eliminate traditional paper-based process."
           platform="GitHub"
@@ -26,7 +26,7 @@ function Projects() {
         />
       </div>
       <div className="border-b lg:col-span-6 lg:border-l">
-        <Item
+        <Card
           title="TBS-BTS Mobile App UI/UX"
           desc="Redesigned UI/UX of an existing mobile app based on Google Material Design 3 principles."
           platform="Behance"
@@ -34,7 +34,7 @@ function Projects() {
         />
       </div>
       <div className="max-lg:border-b lg:col-span-6">
-        <Item
+        <Card
           title="Min Keyboard Tester"
           desc="Developed a web-application for detecting keypress to aid users in testing keyboard functionalities by providing visual and audio feedback."
           platform="Browser"
@@ -42,7 +42,7 @@ function Projects() {
         />
       </div>
       <div className="lg:col-span-6 lg:border-l">
-        <Item
+        <Card
           title="Lunar Keymap"
           desc="Developed a Visual Studio Code extension replicating LunarVim keybindings to enable efficient keyboard-driven workflow for developers."
           platform="GitHub"

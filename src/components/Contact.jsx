@@ -5,7 +5,7 @@ import SubmitBtn from "./SubmitBtn";
 function Input({ id, label, type, placeholder }) {
   return (
     <div className="mb-8 lg:mb-12">
-      <label htmlFor={id} className="pb-1">
+      <label htmlFor={id} className="mb-1">
         {label}
       </label>
       <input
@@ -125,9 +125,7 @@ function Contact() {
         <Form />
       </div>
       <div className="lg:col-span-4 lg:border-l">
-        <div className="lg:col-start-1">
-          <Socials />
-        </div>
+        <Socials />
       </div>
     </div>
   );

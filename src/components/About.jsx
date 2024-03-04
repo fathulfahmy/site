@@ -3,8 +3,8 @@ import potrait from "../assets/potrait_sm.png";
 function Section({ heading, text }) {
   return (
     <section>
-      <b className="pb-1">{heading}</b>
-      <p className="pb-8 lg:pb-12">{text}</p>
+      <b className="mb-1">{heading}</b>
+      <p className="mb-8 lg:mb-12">{text}</p>
     </section>
   );
 }
@@ -33,7 +33,7 @@ function Image() {
     <div className="border-b p-8 pb-0">
       <img
         src={potrait}
-        className="mx-auto my-0 min-h-full object-contain object-bottom"
+        className="mx-auto my-0 size-48 object-contain object-bottom"
       />
     </div>
   );
@@ -42,10 +42,10 @@ function Image() {
 function About() {
   return (
     <div className="lg:grid lg:grid-cols-12">
-      <div className="lg:col-span-8">
+      <div className="lg:col-span-10">
         <Text />
       </div>
-      <div className="max-lg:hidden lg:col-span-4 lg:border-l">
+      <div className="max-lg:hidden lg:col-span-2 lg:border-l">
         <Image />
       </div>
     </div>
