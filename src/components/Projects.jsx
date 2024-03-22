@@ -19,13 +19,21 @@ function Projects() {
     <div className="lg:grid lg:grid-cols-12">
       <div className="border-b lg:col-span-6">
         <Card
+          title="Outfit Puzzle"
+          desc="Developed a social media platform to share outfit collections and inspirations."
+          platform="GitHub"
+          href="https://github.com/fathulfahmy/outfit-puzzle"
+        />
+      </div>
+      <div className="border-b lg:col-span-6 lg:border-l">
+        <Card
           title="Tournament Management System"
           desc="Developed a web-based event registration and administration platform to eliminate traditional paper-based process."
           platform="GitHub"
           href="https://github.com/fathulfahmy/event-management"
         />
       </div>
-      <div className="border-b lg:col-span-6 lg:border-l">
+      <div className="max-lg:border-b lg:col-span-6">
         <Card
           title="TBS-BTS Mobile App UI/UX"
           desc="Redesigned UI/UX of an existing mobile app based on Google Material Design 3 principles."
@@ -33,18 +41,10 @@ function Projects() {
           href="https://www.behance.net/gallery/192555099/TBS-BTS-UIUX-Redesign"
         />
       </div>
-      <div className="max-lg:border-b lg:col-span-6">
-        <Card
-          title="Min Keyboard Tester"
-          desc="Developed a web-application for detecting keypress to aid users in testing keyboard functionalities by providing visual and audio feedback."
-          platform="Browser"
-          href="https://minkeyboardtester.netlify.app"
-        />
-      </div>
       <div className="lg:col-span-6 lg:border-l">
         <Card
           title="Lunar Keymap"
-          desc="Developed a Visual Studio Code extension replicating LunarVim keybindings to enable efficient keyboard-driven workflow for developers."
+          desc="Developed a Visual Studio Code extension with over 700 installs, replicating LunarVim keybindings to enable efficient keyboard-driven workflow for developers."
           platform="GitHub"
           href="https://github.com/fathulfahmy/lunarkeymap"
         />
