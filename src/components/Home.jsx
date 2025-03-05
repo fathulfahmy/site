@@ -7,8 +7,8 @@ function Text() {
       <div className="grow pb-16">
         <img src={typography} />
       </div>
-      <div className="text-xl font-extrabold tracking-tight lg:text-2xl">
-        Student . Developer . Designer
+      <div className="text-xl tracking-tight lg:text-2xl">
+        Graduate . Developer . Designer
       </div>
     </div>
   );

@@ -19,16 +19,16 @@ function Projects() {
     <div className="lg:grid lg:grid-cols-12">
       <div className="border-b lg:col-span-6">
         <Card
-          title="Outfit Puzzle"
-          desc="Developed a social media platform to share outfit collections and inspirations."
+          title="The Barter App"
+          desc="Developed a platform where users can exchange services for other services, cash, or both. Built with React Native for user mobile application, Laravel for admin website, API documentation website, and REST API."
           platform="GitHub"
-          href="https://github.com/fathulfahmy/outfit-puzzle"
+          href="https://github.com/fathulfahmy/the-barter-app"
         />
       </div>
       <div className="border-b lg:col-span-6 lg:border-l">
         <Card
-          title="Tournament Management System"
-          desc="Developed a web-based event registration and administration platform to eliminate traditional paper-based process."
+          title="Event Management System"
+          desc="Developed a web-based system to manage multiple events. Features include landing page, user profile, event registration. Built with PHP, HTML, and CSS for user registration website and admin website."
           platform="GitHub"
           href="https://github.com/fathulfahmy/event-management"
         />
@@ -36,7 +36,7 @@ function Projects() {
       <div className="max-lg:border-b lg:col-span-6">
         <Card
           title="TBS-BTS Mobile App UI/UX"
-          desc="Redesigned UI/UX of an existing mobile app based on Google Material Design 3 principles."
+          desc="Redesigned a public transportation mobile application to enhance user experience. Designed with Figma and Google Material Design 3."
           platform="Behance"
           href="https://www.behance.net/gallery/192555099/TBS-BTS-UIUX-Redesign"
         />
@@ -44,7 +44,7 @@ function Projects() {
       <div className="lg:col-span-6 lg:border-l">
         <Card
           title="Lunar Keymap"
-          desc="Developed a Visual Studio Code extension with over 700 installs, replicating LunarVim keybindings to enable efficient keyboard-driven workflow for developers."
+          desc="Developed a Visual Studio Code extension with over 1.5k installs to enable a keyboard-driven workflow. Features include code editor navigation, file creation, debugging and git keybindings."
           platform="GitHub"
           href="https://github.com/fathulfahmy/lunarkeymap"
         />

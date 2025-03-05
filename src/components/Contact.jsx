@@ -102,17 +102,13 @@ function Socials() {
     <div className="p-4 max-lg:text-center lg:p-8">
       <h3 className="mb-6">Socials</h3>
       <SocialBtn
-        href="https://www.behance.net/fathulfahmy"
-        platform="Behance"
+        href="https://www.linkedin.com/in/fathulfahmy/"
+        platform="LinkedIn"
       />
       <SocialBtn href="https://github.com/fathulfahmy" platform="GitHub" />
       <SocialBtn
-        href="https://instagram.com/fathulfahmy"
-        platform="Instagram"
-      />
-      <SocialBtn
-        href="https://www.linkedin.com/in/fathulfahmy/"
-        platform="LinkedIn"
+        href="https://www.behance.net/fathulfahmy"
+        platform="Behance"
       />
     </div>
   );

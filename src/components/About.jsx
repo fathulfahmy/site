@@ -13,16 +13,16 @@ function Text() {
   return (
     <div className="p-4 lg:p-8">
       <Section
-        heading="2016 - Graphic design and Linux"
-        text="My journey in the tech world began during my high school years, where I found myself drawn to both graphic design and the Linux operating system. As I delved deeper into writing configurations and scripts for various components and software programs, I realized my passion for coding and decided to pursue a career in software engineering."
+        heading="Early Tech (2014 - 2021)"
+        text="I started my tech journey by customizing Android OS, installing Linux, and exploring system configurations. Later, I developed design skills in Inkscape, creating logos, banners, and posters. While studying Civil and Automotive Engineering, I discovered my passion for programming through Java, which led me to shift my focus to software development."
       />
       <Section
-        heading="2022 - Open-source"
-        text="In 2022, I embarked on a deeper dive into open-source development, immersing myself in different communities and making meaningful contributions. I am particularly proud of launching my own projects, LunarKeymap and catppuccin/glazewm, which have allowed me to contribute to the broader tech community in unique ways."
+        heading="Industry Experience (2022 - 2023)"
+        text="I pursued a bachelor's degree in Computer Science (Software Engineering)(Hons.), learning C, C++, C#, Java, PHP, HTML, CSS, Laravel, .NET MAUI, Android, and more. I actively contributed to open-source projects on GitHub and interned at Webby Group Sdn Bhd, where I worked on websites using React, Vue, jQuery, Laravel, REST API, and GraphQL API."
       />
       <Section
-        heading="2024 - UI/UX design and JavaScript"
-        text="Currently, my focus lies in the realms of UI/UX design, web development, and mobile application development. I find immense excitement in the ever-evolving landscape of technology and am eager to see where my journey takes me next."
+        heading="Future Goals (2025 - Present)"
+        text="For my final year project, I developed The Barter App, a platform where users can exchange services for other services, cash, or both. Built with React Native, Laravel, and REST API, receiving positive recognition. Now, I am seeking opportunities as a Full Stack/Web/Mobile Developer to contribute my skills to innovative projects."
       />
     </div>
   );
