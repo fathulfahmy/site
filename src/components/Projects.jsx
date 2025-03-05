@@ -30,7 +30,7 @@ function Projects() {
           title="Event Management System"
           desc="Developed a web-based system to manage multiple events. Features include landing page, user profile, event registration. Built with PHP, HTML, and CSS for user registration website and admin website."
           platform="GitHub"
-          href="https://github.com/fathulfahmy/event-management"
+          href="https://github.com/fathulfahmy/event-management-system"
         />
       </div>
       <div className="max-lg:border-b lg:col-span-6">
