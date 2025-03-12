@@ -1,12 +1,20 @@
 import typography from "../assets/typography.png";
 import potrait from "../assets/potrait_lg.png";
+import resume from "../assets/Fathul Fahmy CV.pdf";
 
 function Text() {
   return (
-    <div className="flex min-h-[32rem] flex-col p-4 pt-20 lg:h-full lg:px-8 lg:pt-20">
+    <div className="flex min-h-[32rem] flex-col p-4 pt-20 lg:h-full lg:px-8">
       <div className="grow pb-16">
         <img src={typography} />
+
+        <a href={resume} target="_blank">
+          <div className="button mt-4 w-full text-center lg:w-1/2">
+            Open Resume
+          </div>
+        </a>
       </div>
+
       <div className="text-xl tracking-tight lg:text-2xl">
         Graduate . Developer . Designer
       </div>
