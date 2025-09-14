@@ -1,0 +1,65 @@
+---
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("projects")).sort((a, b) => b.data.endDate.valueOf() - a.data.endDate.valueOf());
+
+const current = posts.findIndex((post) => post.id == Astro.params.slug);
+const previous = current === 0 ? undefined : posts[current - 1];
+const next = current + 1 === posts.length ? undefined : posts[current + 1];
+---
+
+{
+  next || previous ? (
+    <nav class="projects__nav">
+      {previous && (
+        <div class="projects__nav-item--left">
+          <a href={`/projects/${previous.id}/`}>
+            <span>Previous: </span>
+            <span class="projects__nav-link">{previous.data.title}</span>
+          </a>
+        </div>
+      )}
+      {next && (
+        <div class="projects__nav-item--right">
+          <a href={`/projects/${next.id}/`}>
+            <span>Next: </span>
+            <span class="projects__nav-link">{next.data.title}</span>
+          </a>
+        </div>
+      )}
+    </nav>
+  ) : null
+}
+
+<style>
+  a,
+  .projects__nav-link:hover {
+    text-decoration: none;
+  }
+  .projects__nav {
+    display: flex;
+    margin-top: var(--space-xl);
+  }
+  .projects__nav-item--left,
+  .projects__nav-item--right {
+    flex: 1;
+    gap: var(--space-3xs);
+  }
+  .projects__nav-item--left {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .projects__nav-item--right {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .projects__nav-link {
+    text-decoration: underline;
+    display: block;
+  }
+  @media (min-width: 720px) {
+    .projects__nav-link {
+      display: inline;
+    }
+  }
+</style>

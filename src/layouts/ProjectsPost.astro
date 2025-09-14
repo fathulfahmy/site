@@ -1,0 +1,61 @@
+---
+import type { CollectionEntry } from "astro:content";
+import ProjectDate from "@/components/projects/ProjectDate.astro";
+import ProjectNav from "@/components/projects/ProjectNav.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+type Props = CollectionEntry<"projects">["data"];
+
+const { title, description, endDate, image, link } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="u-container page__container">
+    {image && <img src={image} alt="" />}
+    <div class="project__date">
+      <ProjectDate date={endDate} />
+    </div>
+    <h1>{title}</h1>
+    <div class="project__body prose">
+      <slot />
+    </div>
+    {
+      link ? (
+        <a href={link} target="href" target="_blank">
+          <span>Go to project website</span>
+          <span class="project__link">{link}</span>
+        </a>
+      ) : null
+    }
+
+    <ProjectNav />
+  </article>
+</BaseLayout>
+
+<style>
+  img {
+    width: 100%;
+  }
+  h1 {
+    font-family: var(--font-serif);
+    font-size: var(--step-6);
+    margin-bottom: var(--space-l);
+  }
+  a,
+  .project__link:hover {
+    text-decoration: none;
+  }
+  .page__container {
+    margin: var(--space-2xl) auto;
+  }
+  .project__date {
+    margin: var(--space-s) 0;
+  }
+  .project__body {
+    line-height: 2rem;
+    margin-bottom: var(--space-l);
+  }
+  .project__link {
+    text-decoration: underline;
+  }
+</style>

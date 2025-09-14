@@ -1,0 +1,115 @@
+<form id="contact__form">
+  <p>Name</p>
+  <input type="text" name="user_name" required />
+
+  <p>Email</p>
+  <input type="email" name="user_email" required />
+
+  <p>Message</p>
+  <textarea name="message" required></textarea>
+
+  <button type="submit" id="contact__submit">Submit</button>
+</form>
+
+<style>
+  input,
+  textarea,
+  input:focus,
+  textarea:focus {
+    width: 100%;
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    border-bottom: 1px solid black;
+    margin: var(--space-s) 0 var(--space-l);
+  }
+  textarea {
+    resize: none;
+    field-sizing: content;
+    min-height: 1rem;
+  }
+  button {
+    padding: var(--space-m) var(--space-l);
+    background: var(--color-black);
+    color: var(--color-white);
+    border: 0;
+    border-radius: 99rem;
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.6s ease;
+  }
+  button:hover:not(:disabled) {
+    background: var(--color-gray);
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+  button.success {
+    background: var(--color-green);
+  }
+  button.error {
+    background: var(--color-red);
+  }
+  button.sending {
+    background: var(--color-gray);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+</style>
+
+<script>
+  import emailjs from "@emailjs/browser";
+
+  const PUBLIC_KEY = "6IeDkt_ZMpydWNUp9";
+
+  emailjs.init({ publicKey: PUBLIC_KEY });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const SERVICE_ID = "contact_service";
+    const TEMPLATE_ID = "contact_form";
+
+    const form = document.getElementById("contact__form") as HTMLFormElement;
+    const submit = document.getElementById("contact__submit") as HTMLButtonElement;
+
+    if (form && submit) {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        submit.className = "sending";
+        submit.textContent = "Sending...";
+        submit.disabled = true;
+
+        try {
+          await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form);
+          submit.className = "success";
+          submit.textContent = "Sent!";
+          form.reset();
+
+          setTimeout(() => {
+            submit.className = "";
+            submit.textContent = "Resend";
+            submit.disabled = false;
+          }, 3000);
+        } catch (err) {
+          console.error("Failed to send message.", err);
+          submit.className = "error";
+          submit.textContent = "Failed";
+
+          setTimeout(() => {
+            submit.className = "";
+            submit.textContent = "Retry";
+            submit.disabled = false;
+          }, 3000);
+        }
+      });
+    }
+  });
+</script>

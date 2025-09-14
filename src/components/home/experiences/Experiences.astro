@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+import ExperienceDate from "./ExperienceDate.astro";
+
+const experiences = (await getCollection("experiences")).sort(
+  (a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf()
+);
+---
+
+{
+  experiences.map((experience) => (
+    <article>
+      <div class="experience__date">
+        <ExperienceDate date={experience.data.startDate} />
+      </div>
+      <h4>{experience.data.title}</h4>
+      <h3>{experience.data.company}</h3>
+      <div class="experience__body prose">{experience.body}</div>
+    </article>
+  ))
+}
+
+<style>
+  h4 {
+    font-weight: 600;
+    margin-bottom: var(--space-3xs);
+  }
+  h3,
+  .experience__date {
+    margin-bottom: var(--space-m);
+  }
+  .experience__body {
+    margin-bottom: var(--space-l);
+  }
+  article:last-child .experience__body {
+    margin-bottom: 0;
+  }
+</style>

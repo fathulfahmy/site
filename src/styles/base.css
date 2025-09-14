@@ -1,0 +1,153 @@
+:root {
+  --color-black: #111111;
+  --color-gray: #555555;
+  --color-white: #eeeeee;
+  --color-green: #2f5711;
+  --color-red: #a8200d;
+
+  --font-sans: "Poppins", "Inter", sans-serif;
+  --font-serif: "Fraunces", serif;
+
+  /* @link https://utopia.fyi/type/calculator?c=360,16,1.2,1240,16,1.25,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --step--1: clamp(0.8rem, 0.847rem + -0.0606vw, 0.8333rem);
+  --step-0: clamp(1rem, 1rem + 0vw, 1rem);
+  --step-1: clamp(1.2rem, 1.1795rem + 0.0909vw, 1.25rem);
+  --step-2: clamp(1.44rem, 1.3899rem + 0.2227vw, 1.5625rem);
+  --step-3: clamp(1.728rem, 1.6359rem + 0.4093vw, 1.9531rem);
+  --step-4: clamp(2.0736rem, 1.9231rem + 0.6687vw, 2.4414rem);
+  --step-5: clamp(2.4883rem, 2.2578rem + 1.0244vw, 3.0518rem);
+  --step-6: clamp(2.986rem, 2.647rem + 1.5068vw, 3.8147rem);
+
+  /* @link https://utopia.fyi/space/calculator?c=360,16,1.2,1240,16,1.25,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --space-3xs: clamp(0.25rem, 0.25rem + 0vw, 0.25rem);
+  --space-2xs: clamp(0.5rem, 0.5rem + 0vw, 0.5rem);
+  --space-xs: clamp(0.75rem, 0.75rem + 0vw, 0.75rem);
+  --space-s: clamp(1rem, 1rem + 0vw, 1rem);
+  --space-m: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
+  --space-l: clamp(2rem, 2rem + 0vw, 2rem);
+  --space-xl: clamp(3rem, 3rem + 0vw, 3rem);
+  --space-2xl: clamp(4rem, 4rem + 0vw, 4rem);
+  --space-3xl: clamp(6rem, 6rem + 0vw, 6rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.25rem, 0.1477rem + 0.4545vw, 0.5rem);
+  --space-2xs-xs: clamp(0.5rem, 0.3977rem + 0.4545vw, 0.75rem);
+  --space-xs-s: clamp(0.75rem, 0.6477rem + 0.4545vw, 1rem);
+  --space-s-m: clamp(1rem, 0.7955rem + 0.9091vw, 1.5rem);
+  --space-m-l: clamp(1.5rem, 1.2955rem + 0.9091vw, 2rem);
+  --space-l-xl: clamp(2rem, 1.5909rem + 1.8182vw, 3rem);
+  --space-xl-2xl: clamp(3rem, 2.5909rem + 1.8182vw, 4rem);
+  --space-2xl-3xl: clamp(4rem, 3.1818rem + 3.6364vw, 6rem);
+
+  /* @link https://utopia.fyi/grid/calculator?c=360,16,1.2,1240,16,1.25,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --grid-max-width: 62rem;
+  --grid-gutter: var(--space-s-l, clamp(1rem, 0.4304rem + 2.5316vw, 2rem));
+  --grid-columns: 12;
+
+  /* @link https://utopia.fyi/clamp/calculator?a=360,1240,16—48 */
+  --fluid-16-48: clamp(1rem, 0.1818rem + 3.6364vw, 3rem);
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter/inter.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter/inter-italic.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/poppins/poppins.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/poppins/poppins-italic.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces/fraunces.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces/fraunces-italic.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+::selection {
+  background: rgba(17, 17, 17, 0.6);
+  color: var(--color-white);
+}
+
+body,
+input,
+textarea {
+  background: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-sans);
+  letter-spacing: -0.025rem;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+body {
+  font-size: var(--step-0);
+}
+
+.u-container {
+  max-width: var(--grid-max-width);
+  padding-inline: var(--grid-gutter);
+  margin-inline: auto;
+}
+
+.u-grid {
+  display: grid;
+  gap: var(--grid-gutter);
+}
+
+.sr-only {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(1px 1px 1px 1px);
+  /* maybe deprecated but we need to support legacy browsers */
+  clip: rect(1px, 1px, 1px, 1px);
+  /* modern browsers, clip-path works inwards from each corner */
+  clip-path: inset(50%);
+  /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
+  white-space: nowrap;
+}
