@@ -1,8 +1,6 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Experiences from "@/components/home/experiences/Experiences.astro";
-import ContactForm from "@/components/home/contact/ContactForm.astro";
 ---
 
 <BaseLayout>
@@ -12,14 +10,9 @@ import ContactForm from "@/components/home/contact/ContactForm.astro";
       <p>Full Stack Developer</p>
     </section>
 
-    <section id="about">
+    <section>
       <h2>About</h2>
       <Experiences />
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <ContactForm />
     </section>
   </div>
 </BaseLayout>

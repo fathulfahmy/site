@@ -1,0 +1,25 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ContactForm from "@/components/home/contact/ContactForm.astro";
+---
+
+<BaseLayout>
+  <div class="u-container">
+    <h2>Contact</h2>
+    <ContactForm />
+  </div>
+</BaseLayout>
+
+<style>
+  div {
+    margin: var(--space-2xl) auto;
+  }
+
+  h2 {
+    font-family: var(--font-serif);
+  }
+  h2 {
+    font-size: var(--step-4);
+    margin-bottom: var(--space-xl);
+  }
+</style>

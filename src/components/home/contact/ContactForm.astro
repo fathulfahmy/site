@@ -28,6 +28,7 @@
   }
 
   textarea {
+    resize: none;
     overflow: hidden;
   }
 
@@ -72,6 +73,16 @@
 
     const form = document.getElementById("contact__form") as HTMLFormElement;
     const submit = document.getElementById("contact__submit") as HTMLButtonElement;
+    const textarea = form.querySelector("textarea") as HTMLTextAreaElement;
+
+    if (textarea) {
+      const autoExpand = (el: HTMLTextAreaElement) => {
+        el.style.height = "auto";
+        el.style.height = el.scrollHeight + "px";
+      };
+      autoExpand(textarea);
+      textarea.addEventListener("input", () => autoExpand(textarea));
+    }
 
     if (form && submit) {
       form.addEventListener("submit", async (e) => {
