@@ -10,4 +10,4 @@ Working on Kintone JavaScript customizations at AsiaQuest taught me a lot about 
 
 This friction led me to build Kintool, a unified JavaScript library that bridges these gaps. The library enables cross-platform development for Kintone customizations while providing an integrated UI component library and REST API client all in one package. Built with JavaScript and bundled using Rollup, the entire development and deployment process is automated through GitHub Actions.
 
-The goal was simple: reduce the overhead of Kintone development and let developers focus on building features rather than managing multiple APIs and dependencies.
+The goal was simple, reduce the overhead of Kintone development and let developers focus on building features rather than managing multiple APIs and dependencies.
