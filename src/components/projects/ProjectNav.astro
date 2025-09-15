@@ -10,20 +10,20 @@ const next = current + 1 === posts.length ? undefined : posts[current + 1];
 
 {
   next || previous ? (
-    <nav class="projects__nav">
+    <nav>
       {previous && (
-        <div class="projects__nav-item--left">
+        <div>
           <a href={`/projects/${previous.id}/`}>
-            <span>Previous: </span>
-            <span class="projects__nav-link">{previous.data.title}</span>
+            <p>Previous</p>
+            <p class="project-nav__link">{previous.data.title}</p>
           </a>
         </div>
       )}
       {next && (
-        <div class="projects__nav-item--right">
+        <div class="project-nav__right">
           <a href={`/projects/${next.id}/`}>
-            <span>Next: </span>
-            <span class="projects__nav-link">{next.data.title}</span>
+            <p>Next</p>
+            <p class="project-nav__link">{next.data.title}</p>
           </a>
         </div>
       )}
@@ -32,34 +32,26 @@ const next = current + 1 === posts.length ? undefined : posts[current + 1];
 }
 
 <style>
-  a,
-  .projects__nav-link:hover {
+  a {
     text-decoration: none;
   }
-  .projects__nav {
+  nav {
     display: flex;
-    margin-top: var(--space-xl);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--space-s);
+    margin-top: var(--space-2xl);
   }
-  .projects__nav-item--left,
-  .projects__nav-item--right {
-    flex: 1;
-    gap: var(--space-3xs);
+
+  .project-nav__right {
+    margin-left: auto;
   }
-  .projects__nav-item--left {
-    display: flex;
-    justify-content: flex-start;
-  }
-  .projects__nav-item--right {
-    display: flex;
-    justify-content: flex-end;
-  }
-  .projects__nav-link {
+
+  .project-nav__link {
     text-decoration: underline;
-    display: block;
   }
-  @media (min-width: 720px) {
-    .projects__nav-link {
-      display: inline;
-    }
+
+  .project-nav__link:hover {
+    text-decoration: none;
   }
 </style>

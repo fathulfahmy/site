@@ -16,45 +16,38 @@
   textarea,
   input:focus,
   textarea:focus {
-    width: 100%;
-    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
     outline: none;
     box-shadow: none;
-    border-bottom: 1px solid black;
+    width: 100%;
+    border-bottom: 1px solid var(--color-black);
     margin: var(--space-s) 0 var(--space-l);
   }
+
   textarea {
-    resize: none;
-    field-sizing: content;
-    min-height: 1rem;
+    overflow: hidden;
   }
+
   button {
-    padding: var(--space-m) var(--space-l);
-    background: var(--color-black);
-    color: var(--color-white);
-    border: 0;
-    border-radius: 99rem;
     width: 100%;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.6s ease;
   }
-  button:hover:not(:disabled) {
-    background: var(--color-gray);
-  }
-  button:disabled {
-    cursor: not-allowed;
-  }
+
   button.success {
     background: var(--color-green);
   }
+
   button.error {
     background: var(--color-red);
   }
+
   button.sending {
     background: var(--color-gray);
     animation: pulse 2s ease-in-out infinite;
   }
+
   @keyframes pulse {
     0%,
     100% {

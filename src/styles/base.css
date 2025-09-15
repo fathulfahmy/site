@@ -101,26 +101,53 @@
   color: var(--color-white);
 }
 
+body {
+  color: var(--color-black);
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: 1.75;
+  letter-spacing: -0.025rem;
+}
+
 body,
 input,
 textarea {
   background: var(--color-white);
-  color: var(--color-black);
-  font-family: var(--font-sans);
-  letter-spacing: -0.025rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
 }
 
 a {
   color: var(--color-text);
-  text-decoration: underline;
 }
 
 a:hover {
   text-decoration: none;
 }
 
-body {
-  font-size: var(--step-0);
+button {
+  border: 0;
+  border-radius: 99rem;
+  cursor: pointer;
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: var(--space-s) var(--space-l);
+  transition: background 0.6s ease;
+}
+
+button:hover:not(:disabled) {
+  background: var(--color-gray);
+}
+
+button:disabled {
+  cursor: not-allowed;
 }
 
 .u-container {
@@ -142,12 +169,8 @@ body {
   height: 1px;
   width: 1px;
   overflow: hidden;
-  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
   clip: rect(1px 1px 1px 1px);
-  /* maybe deprecated but we need to support legacy browsers */
   clip: rect(1px, 1px, 1px, 1px);
-  /* modern browsers, clip-path works inwards from each corner */
   clip-path: inset(50%);
-  /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
   white-space: nowrap;
 }

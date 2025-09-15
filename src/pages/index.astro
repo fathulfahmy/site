@@ -6,7 +6,7 @@ import ContactForm from "@/components/home/contact/ContactForm.astro";
 ---
 
 <BaseLayout>
-  <div class="u-container page__container">
+  <div class="u-container">
     <section>
       <h1>Fathul Fahmy</h1>
       <p>Full Stack Developer</p>
@@ -25,22 +25,30 @@ import ContactForm from "@/components/home/contact/ContactForm.astro";
 </BaseLayout>
 
 <style>
+  div {
+    margin: var(--space-2xl) auto;
+  }
+
   section {
     margin-bottom: var(--space-2xl);
   }
+
   h1,
   h2 {
     font-family: var(--font-serif);
   }
+
   h1 {
     font-size: var(--step-5);
     margin-bottom: var(--space-3xs);
   }
+
   h2 {
     font-size: var(--step-4);
     margin-bottom: var(--space-xl);
   }
-  .page__container {
-    margin: var(--space-2xl) auto;
+
+  p {
+    color: var(--color-gray);
   }
 </style>

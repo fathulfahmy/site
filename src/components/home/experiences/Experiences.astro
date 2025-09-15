@@ -8,30 +8,39 @@ const experiences = (await getCollection("experiences")).sort(
 ---
 
 {
-  experiences.map((experience) => (
-    <article>
-      <div class="experience__date">
-        <ExperienceDate date={experience.data.startDate} />
-      </div>
-      <h4>{experience.data.title}</h4>
-      <h3>{experience.data.company}</h3>
-      <div class="experience__body prose">{experience.body}</div>
-    </article>
-  ))
+  experiences
+    ? experiences.map((experience) => (
+        <article>
+          <div class="experience__date">
+            <ExperienceDate date={experience.data.startDate} />
+          </div>
+          <h3>{experience.data.title}</h3>
+          <h4>{experience.data.company}</h4>
+          <div class="experience__body prose">{experience.body}</div>
+        </article>
+      ))
+    : null
 }
 
 <style>
-  h4 {
+  h3 {
     font-weight: 600;
-    margin-bottom: var(--space-3xs);
+    margin-bottom: var(--space-2xs);
   }
-  h3,
+
+  h4 {
+    color: var(--color-gray);
+  }
+
+  h4,
   .experience__date {
     margin-bottom: var(--space-m);
   }
+
   .experience__body {
-    margin-bottom: var(--space-l);
+    margin-bottom: var(--space-xl);
   }
+
   article:last-child .experience__body {
     margin-bottom: 0;
   }

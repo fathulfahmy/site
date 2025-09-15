@@ -5,42 +5,49 @@ import ProjectDate from "./ProjectDate.astro";
 const projects = (await getCollection("projects")).sort((a, b) => b.data.endDate.valueOf() - a.data.endDate.valueOf());
 ---
 
-<div class="project__container">
-  {
-    projects.map((project) => (
-      <article>
-        <a href={`/projects/${project.id}/`}>
-          <img src={project.data.image} alt="" />
-          <h2>{project.data.title}</h2>
-          <p class="project__date">
-            <ProjectDate date={project.data.endDate} />
-          </p>
-        </a>
-      </article>
-    ))
-  }
-</div>
+{
+  projects ? (
+    <div>
+      {projects.map((project) => (
+        <article>
+          <a href={`/projects/${project.id}/`}>
+            <img src={project.data.image} alt="" />
+            <h2>{project.data.title}</h2>
+            <p class="projects__date">
+              <ProjectDate date={project.data.endDate} />
+            </p>
+          </a>
+        </article>
+      ))}
+    </div>
+  ) : null
+}
 
 <style>
+  div {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    gap: var(--space-xl) var(--space-3xs);
+  }
+
   article {
     grid-column: span 12;
   }
+
   a {
     text-decoration: none;
   }
+
   img {
     width: 100%;
   }
+
   h2 {
     font-family: var(--font-serif);
     font-size: var(--step-3);
     margin: var(--space-s) 0 var(--space-3xs);
   }
-  .project__container {
-    display: grid;
-    grid-template-columns: repeat(var(--grid-columns), 1fr);
-    gap: var(--space-xl) var(--space-3xs);
-  }
+
   @media (min-width: 720px) {
     article {
       grid-column: span 6;

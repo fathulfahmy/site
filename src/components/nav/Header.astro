@@ -6,55 +6,50 @@ import SocialLinks from "./SocialLinks.astro";
 
 <header>
   <nav>
-    <p class="header__site"><a href="/">{SITE_TITLE}</a></p>
-    <div class="header__links">
+    <p class="header__site-title"><a href="/">{SITE_TITLE}</a></p>
+    <div class="header__header-links">
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/projects">Projects</HeaderLink>
       <HeaderLink href="/#contact">Contact</HeaderLink>
     </div>
-    <div class="header__socials">
+    <div class="header__social-links">
       <SocialLinks />
     </div>
   </nav>
-  <style>
-    header {
-      padding: 2rem 1rem;
-    }
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-    }
-    a {
-      text-decoration: none;
-    }
-    .icon {
-      height: var(--space-l);
-      width: var(--space-l);
-      fill: currentColor;
-    }
-    .header__links a {
-      padding: var(--space-xs) var(--space-s);
-    }
-    .header__site,
-    .header__socials,
-    .header__socials a {
-      display: none;
-    }
-    @media (min-width: 720px) {
-      header {
-        padding: var(--space-s);
-      }
-      nav {
-        justify-content: space-between;
-      }
-      .header__links a {
-        padding: var(--space-xs) var(--space-l);
-      }
-      .header__site,
-      .header__socials {
-        display: block;
-      }
-    }
-  </style>
 </header>
+
+<style>
+  header {
+    padding: var(--space-l) var(--space-s);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .header__site-title,
+  .header__social-links {
+    display: none;
+  }
+
+  @media (min-width: 720px) {
+    header {
+      padding: var(--space-s);
+    }
+
+    nav {
+      justify-content: space-between;
+    }
+
+    .header__site-title,
+    .header__social-links {
+      display: block;
+    }
+  }
+</style>
