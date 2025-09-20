@@ -1,4 +1,6 @@
 ---
+import "aos/dist/aos.css";
+
 import BaseHead from "@/components/meta/BaseHead.astro";
 import Header from "@/components/nav/Header.astro";
 import Footer from "@/components/nav/Footer.astro";
@@ -25,3 +27,9 @@ const { title, description } = Astro.props;
     <Footer />
   </body>
 </html>
+
+<script>
+  import AOS from "aos";
+
+  AOS.init();
+</script>

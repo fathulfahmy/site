@@ -19,6 +19,7 @@
     "@astrojs/rss": "4.0.11",
     "@astrojs/sitemap": "3.4.1",
     "@emailjs/browser": "^4.4.1",
+    "aos": "^2.3.4",
     "astro": "5.10.1",
     "typescript": "5.8.3"
   },
