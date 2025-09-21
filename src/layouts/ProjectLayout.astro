@@ -38,6 +38,8 @@ const { title, description, endDate, image, link } = Astro.props;
 
   img {
     width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1200 / 627;
   }
 
   h1 {
@@ -46,16 +48,13 @@ const { title, description, endDate, image, link } = Astro.props;
     margin-bottom: var(--space-l);
   }
 
-  a {
-    text-decoration: none;
-  }
-
   button {
     width: 100%;
   }
 
   .project__date {
-    margin: var(--space-s) 0;
+    color: var(--color-gray);
+    margin: var(--space-2xs) 0 var(--space-3xs);
   }
 
   .project__body {
