@@ -3,7 +3,7 @@ title: "Min Keyboard Tester"
 description: "Min Keyboard Tester"
 startDate: "July 01 2023"
 endDate: "July 01 2023"
-image: "/images/projects/placeholder-4.jpg"
+image: "/images/projects/min-keyboard-tester.png"
 link: "https://min-keyboard-tester.pages.dev"
 ---
 

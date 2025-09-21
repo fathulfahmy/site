@@ -3,7 +3,7 @@ title: "Debt Collector"
 description: "Debt Collector"
 startDate: "December 01 2024"
 endDate: "December 01 2024"
-image: "/images/projects/placeholder-3.jpg"
+image: "/images/projects/debt-collector.png"
 link: "https://github.com/fathulfahmy/debt-collector"
 ---
 

@@ -2,7 +2,7 @@
 title: "Lunar Keymap"
 description: "Lunar Keymap"
 startDate: "July 01 2025"
-image: "/images/projects/placeholder-3.jpg"
+image: "/images/projects/lunar-keymap.png"
 link: "https://marketplace.visualstudio.com/items?itemName=fathulfahmy.lunarkeymap"
 ---
 

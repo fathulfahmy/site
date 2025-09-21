@@ -3,7 +3,7 @@ title: "The Barter App"
 description: "The Barter App"
 startDate: "October 01 2024"
 endDate: "February 01 2025"
-image: "/images/projects/placeholder-2.jpg"
+image: "/images/projects/the-barter-app.png"
 link: "https://github.com/fathulfahmy/the-barter-app"
 ---
 

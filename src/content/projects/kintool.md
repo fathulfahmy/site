@@ -2,7 +2,7 @@
 title: "Kintool"
 description: "Kintool"
 startDate: "August 01 2025"
-image: "/images/projects/placeholder-2.jpg"
+image: "/images/projects/kintool.png"
 link: "https://npmjs.com/package/kintool"
 ---
 

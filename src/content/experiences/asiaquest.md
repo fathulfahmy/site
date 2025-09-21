@@ -7,4 +7,4 @@ location: "Kuala Lumpur, Malaysia"
 locationType: "Hybrid"
 ---
 
-Currently, I'm working as a Full Stack Developer at AsiaQuest, where I've been building AI-powered solutions that make a real difference. I developed a credit score module using Multi-Agent RAG with OpenAI to help speed up loan processing for Dipo Star Finance. I also created an internal AI chatbot to keep sensitive data secure, deploying it on Google Kubernetes Engine with Azure CI/CD pipelines. When I'm not working on AI projects, I'm creating JavaScript customizations for Kintone or translating business requirements into system designs with cost and timeline estimations.
+As a Full Stack Developer and AI Engineer at AsiaQuest, I developed an AI credit score microservice to help speed up loan processing for Dipo Star Finance using FastAPI and Multi-Agent RAG . I also developed an AI chatbot as an alternative to ChatGPT to protect sensitive data, deployed on Google Kubernetes Engine with Azure CI/CD pipelines. Apart from AI, I developed JavaScript customizations for Kintone, and translated business requirements into system designs with cost and timeline estimations.

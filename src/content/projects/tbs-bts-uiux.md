@@ -3,7 +3,7 @@ title: "TBS-BTS UI/UX (Unofficial)"
 description: "TBS-BTS UI/UX (Unofficial)"
 startDate: "January 01 2024"
 endDate: "January 01 2024"
-image: "/images/projects/placeholder-3.jpg"
+image: "/images/projects/tbs-bts-uiux.png"
 link: "https://www.behance.net/gallery/192555099/TBS-BTS-UIUX-Redesign"
 ---
 

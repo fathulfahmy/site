@@ -3,7 +3,7 @@ title: "Event Management System"
 description: "Event Management System"
 startDate: "December 01 2024"
 endDate: "March 01 2024"
-image: "/images/projects/placeholder-2.jpg"
+image: "/images/projects/event-management-system.png"
 link: "https://github.com/fathulfahmy/event-management-system"
 ---
 

@@ -2,7 +2,7 @@
 title: "Catppuccin"
 description: "Catppuccin"
 startDate: "June 01 2023"
-image: "/images/projects/placeholder-4.jpg"
+image: "/images/projects/catppuccin.png"
 link: "https://github.com/catppuccin/glazewm"
 ---
 

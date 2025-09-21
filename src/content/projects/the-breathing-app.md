@@ -3,7 +3,7 @@ title: "The Breathing App"
 description: "The Breathing App"
 startDate: "June 01 2024"
 endDate: "June 01 2024"
-image: "/images/projects/placeholder-4.jpg"
+image: "/images/projects/the-breathing-app.png"
 link: "https://github.com/fathulfahmy/the-breathing-app"
 ---
 
