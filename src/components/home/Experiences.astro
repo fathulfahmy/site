@@ -10,13 +10,15 @@ const experiences = (await getCollection("experiences")).sort(
 {
   experiences
     ? experiences.map((experience) => (
-        <article data-aos="fade-up">
-          <div class="experience__date">
+        <article>
+          <div class="experience__date" data-aos="fade-up">
             <ExperienceDate date={experience.data.startDate} />
           </div>
-          <h3>{experience.data.title}</h3>
-          <h4>{experience.data.company}</h4>
-          <div class="experience__body prose">{experience.body}</div>
+          <h3 data-aos="fade-up">{experience.data.title}</h3>
+          <h4 data-aos="fade-up">{experience.data.company}</h4>
+          <div class="experience__body prose" data-aos="fade-up">
+            {experience.body}
+          </div>
         </article>
       ))
     : null

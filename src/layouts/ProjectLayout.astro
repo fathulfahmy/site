@@ -13,27 +13,25 @@ const { title, description, endDate, image, link } = Astro.props;
   <article class="u-container">
     {image && <img src={image} alt="" />}
 
-    <div data-aos="fade-up">
-      <div class="project__date">
-        <ProjectDate date={endDate} />
-      </div>
-
-      <h1>{title}</h1>
-
-      <div class="project__body prose">
-        <slot />
-      </div>
-
-      {
-        link ? (
-          <a class="project__link" href={link} target="_blank" rel="noopener noreferrer">
-            <button>Open project in new tab</button>
-          </a>
-        ) : null
-      }
-
-      <ProjectNav />
+    <div class="project__date">
+      <ProjectDate date={endDate} />
     </div>
+
+    <h1>{title}</h1>
+
+    <div class="project__body prose">
+      <slot />
+    </div>
+
+    {
+      link ? (
+        <a class="project__link" href={link} target="_blank" rel="noopener noreferrer">
+          <button>Open project in new tab</button>
+        </a>
+      ) : null
+    }
+
+    <ProjectNav />
   </article>
 </BaseLayout>
 
