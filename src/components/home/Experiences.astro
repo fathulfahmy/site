@@ -10,7 +10,7 @@ const experiences = (await getCollection("experiences")).sort(
 {
   experiences
     ? experiences.map((experience) => (
-        <article>
+        <article data-aos="fade-up">
           <div class="experience__date">
             <ExperienceDate date={experience.data.startDate} />
           </div>

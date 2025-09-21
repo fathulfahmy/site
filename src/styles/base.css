@@ -103,6 +103,8 @@ body {
   line-height: 1.75;
   letter-spacing: -0.025rem;
   min-height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 body,
