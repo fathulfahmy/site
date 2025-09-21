@@ -151,7 +151,7 @@ button:disabled {
 
 .u-container {
   max-width: var(--grid-max-width);
-  padding-inline: var(--grid-gutter);
+  padding: var(--space-3xl) var(--grid-gutter);
   margin-inline: auto;
 }
 
