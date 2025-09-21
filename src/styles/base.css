@@ -151,7 +151,7 @@ button:disabled {
 
 .u-container {
   max-width: var(--grid-max-width);
-  padding: var(--space-3xl) var(--grid-gutter);
+  padding: var(--space-2xl) var(--grid-gutter);
   margin-inline: auto;
 }
 
@@ -172,4 +172,10 @@ button:disabled {
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+@media (min-width: 720px) {
+  .u-container {
+    padding: var(--space-3xl) var(--grid-gutter);
+  }
 }
