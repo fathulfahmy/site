@@ -2,7 +2,7 @@ import { Hero } from "@/components/Hero";
 import content from "@/content/contact.json";
 import { CreateContact } from "@/features/contact/components/create-contact";
 
-const ContactPage = () => {
+export default function ContactPage() {
   return (
     <div>
       <Hero>
@@ -12,6 +12,4 @@ const ContactPage = () => {
       <CreateContact />
     </div>
   );
-};
-
-export default ContactPage;
+}

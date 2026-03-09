@@ -1,3 +1,5 @@
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
+
 export type Post = {
   category: string;
   slug: string;
@@ -6,6 +8,8 @@ export type Post = {
   date: string; // ISO Date	"2015-03-25"
   coverImage: string;
   link: string;
-  content: string;
-  featured: boolean;
+  isFeatured: boolean;
+  content: MDXRemoteSerializeResult;
 };
+
+export type PostMeta = Omit<Post, "content">;

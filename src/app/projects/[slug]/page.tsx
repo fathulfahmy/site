@@ -1,29 +1,25 @@
 import { Hero } from "@/components/Hero";
-import { getAllPosts, getPostBySlug } from "@/features/projects/api/get-posts";
-import { Post } from "@/types/api";
-import { Metadata } from "next";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import MDXContent from "@/components/MDXContent";
+import { getPostBySlug, getPostSlugs } from "@/features/projects/api/get-posts";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 
-type ProjectPageParams = {
-  params: Promise<{
-    slug: string;
-  }>;
+export async function generateStaticParams() {
+  const slugs = getPostSlugs();
+  return slugs.map((slug) => ({ slug }));
+}
+
+type ProjectPageProps = {
+  params: Promise<{ slug: string }>;
 };
 
-const ProjectPage = async (props: ProjectPageParams) => {
-  const params = await props.params;
-  const post = getPostBySlug(params.slug);
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   const date = new Intl.DateTimeFormat("en-GB", {
     day: "2-digit",
     month: "short",
     year: "numeric",
   }).format(new Date(post.date));
-
-  if (!post) {
-    return notFound();
-  }
 
   return (
     <div>
@@ -44,39 +40,10 @@ const ProjectPage = async (props: ProjectPageParams) => {
             </Link>
           </div>
           <div className="prose flex flex-col gap-4 text-lg text-neutral-500">
-            <MDXRemote source={post.content} />
+            <MDXContent {...post.content} />
           </div>
         </div>
       </section>
     </div>
   );
-};
-
-export default ProjectPage;
-
-export async function generateMetadata(props: ProjectPageParams): Promise<Metadata> {
-  const params = await props.params;
-  const post = getPostBySlug(params.slug);
-
-  if (!post) {
-    return notFound();
-  }
-
-  const title = `${post.title} | Fathul Fahmy`;
-
-  return {
-    title,
-    openGraph: {
-      title,
-      images: [post.coverImage],
-    },
-  };
-}
-
-export async function generateStaticParams() {
-  const posts = getAllPosts();
-
-  return posts.map((post: Post) => ({
-    slug: post.slug,
-  }));
 }

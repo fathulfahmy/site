@@ -1,7 +1,7 @@
 import { Hero } from "@/components/Hero";
 import content from "@/content/about.json";
 
-const AboutPage = () => {
+export default function AboutPage() {
   return (
     <div>
       <Hero>
@@ -37,6 +37,4 @@ const AboutPage = () => {
       </section>
     </div>
   );
-};
-
-export default AboutPage;
+}

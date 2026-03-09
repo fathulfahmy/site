@@ -1,8 +1,8 @@
-import { Post } from "@/types/api";
+import { PostMeta } from "@/types/api";
 import Link from "next/link";
 
 type ProjectsListProps = {
-  posts: Post[];
+  posts: PostMeta[];
 };
 
 export const ProjectsList = ({ posts }: ProjectsListProps) => {

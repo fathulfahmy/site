@@ -2,10 +2,11 @@ import { Hero } from "@/components/Hero";
 import content from "@/content/home.json";
 import { getAllPosts } from "@/features/projects/api/get-posts";
 import { ProjectsList } from "@/features/projects/components/projects-list";
+import { PostMeta } from "@/types/api";
 import Link from "next/link";
 
 export default function HomePage() {
-  const posts = getAllPosts().filter((post) => post.featured);
+  const posts = getAllPosts().filter((post: PostMeta) => post.isFeatured);
   const oldest = new Date(posts[posts.length - 1]?.date).getFullYear();
   const newest = new Date(posts[0]?.date).getFullYear();
 
