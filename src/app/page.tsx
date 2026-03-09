@@ -1,4 +1,4 @@
-import { Hero } from "@/components/Hero";
+import { Hero } from "@/components/hero";
 import content from "@/content/home.json";
 import { getAllPosts } from "@/features/projects/api/get-posts";
 import { ProjectsList } from "@/features/projects/components/projects-list";

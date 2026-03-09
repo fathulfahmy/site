@@ -1,14 +1,14 @@
-import { Hero } from "@/components/Hero";
-import { MDXContent } from "@/components/MDXContent";
+import { Hero } from "@/components/hero";
+import { MDXContent } from "@/components/mdx-content";
 import { getPostBySlug } from "@/features/projects/api/get-posts";
 import { markdownToHtml } from "@/lib/remark/markdown-to-html";
 import { notFound } from "next/navigation";
 
-type ProjectPageParams = {
+interface ProjectPageParams {
   params: Promise<{
     slug: string;
   }>;
-};
+}
 
 export default async function ProjectPage(props: ProjectPageParams) {
   const params = await props.params;

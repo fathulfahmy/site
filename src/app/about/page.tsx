@@ -1,4 +1,4 @@
-import { Hero } from "@/components/Hero";
+import { Hero } from "@/components/hero";
 import content from "@/content/about.json";
 
 export default function AboutPage() {

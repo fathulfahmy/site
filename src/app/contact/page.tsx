@@ -1,4 +1,4 @@
-import { Hero } from "@/components/Hero";
+import { Hero } from "@/components/hero";
 import content from "@/content/contact.json";
 import { CreateContact } from "@/features/contact/components/create-contact";
 

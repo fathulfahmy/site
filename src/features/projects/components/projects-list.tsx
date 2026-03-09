@@ -1,9 +1,9 @@
 import { Post } from "@/types/post";
 import Link from "next/link";
 
-type ProjectsListProps = {
+interface ProjectsListProps {
   posts: Post[];
-};
+}
 
 export const ProjectsList = ({ posts }: ProjectsListProps) => (
   <div className="flex flex-col gap-8">
