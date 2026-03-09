@@ -1,20 +1,25 @@
 import { Hero } from "@/components/Hero";
-import MDXContent from "@/components/MDXContent";
-import { getPostBySlug, getPostSlugs } from "@/features/projects/api/get-posts";
-import Link from "next/link";
+import { MDXContent } from "@/components/MDXContent";
+import { getPostBySlug } from "@/features/projects/api/get-posts";
+import { markdownToHtml } from "@/lib/remark/markdown-to-html";
+import { notFound } from "next/navigation";
 
-export async function generateStaticParams() {
-  const slugs = getPostSlugs();
-  return slugs.map((slug) => ({ slug }));
-}
-
-type ProjectPageProps = {
-  params: Promise<{ slug: string }>;
+type ProjectPageParams = {
+  params: Promise<{
+    slug: string;
+  }>;
 };
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
-  const { slug } = await params;
-  const post = await getPostBySlug(slug);
+export default async function ProjectPage(props: ProjectPageParams) {
+  const params = await props.params;
+  const post = getPostBySlug(params.slug);
+
+  if (!post) {
+    return notFound();
+  }
+
+  const content = await markdownToHtml(post.content || "");
+
   const date = new Intl.DateTimeFormat("en-GB", {
     day: "2-digit",
     month: "short",
@@ -34,13 +39,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
         <div className="flex-2">
           <div className="mb-8 flex flex-col gap-8 lg:flex-col-reverse">
-            <img src={post.coverImage} className="w-full" />
-            <Link href={post.link} className="text-lg">
+            <img src={post.coverImage} className="w-full" alt={post.title} />
+            <a href={post.link} target="_blank" rel="noopener noreferrer" className="text-lg">
               Visit Project &rarr;
-            </Link>
+            </a>
           </div>
           <div className="prose flex flex-col gap-4 text-lg text-neutral-500">
-            <MDXContent {...post.content} />
+            <MDXContent content={content} />
           </div>
         </div>
       </section>

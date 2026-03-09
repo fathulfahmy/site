@@ -1,36 +1,25 @@
-import { Post, PostMeta } from "@/types/api";
+import { Post } from "@/types/post";
 import fs from "fs";
 import matter from "gray-matter";
-import { serialize } from "next-mdx-remote/serialize";
-import path from "path";
+import { join } from "path";
 
-const contentDirectory = path.join(process.cwd(), "src/content/posts");
+const postsDirectory = join(process.cwd(), "src/content/posts");
 
-export function getPostSlugs(): string[] {
-  return fs.readdirSync(contentDirectory).map((file) => file.replace(/\.mdx$/, ""));
+export function getPostSlugs() {
+  return fs.readdirSync(postsDirectory);
 }
 
-export async function getPostBySlug(slug: string): Promise<Post> {
-  const filePath = path.join(contentDirectory, `${slug}.mdx`);
-  const source = fs.readFileSync(filePath, "utf8");
-  const { content, data } = matter(source);
-  const mdxContent = await serialize(content);
+export function getPostBySlug(slug: string) {
+  const realSlug = slug.replace(/\.md$/, "");
+  const fullPath = join(postsDirectory, `${realSlug}.md`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data, content } = matter(fileContents);
 
-  return {
-    ...data,
-    slug,
-    content: mdxContent,
-  } as Post;
+  return { ...data, slug: realSlug, content } as Post;
 }
-export function getAllPosts(): PostMeta[] {
-  const slugs = fs.readdirSync(contentDirectory).map((file) => file.replace(/\.mdx$/, ""));
 
-  const posts = slugs.map((slug) => {
-    const filePath = path.join(contentDirectory, `${slug}.mdx`);
-    const source = fs.readFileSync(filePath, "utf8");
-    const { data } = matter(source);
-    return { ...data, slug } as PostMeta;
-  });
-
-  return posts.sort((a, b) => (a.date > b.date ? -1 : 1));
+export function getAllPosts(): Post[] {
+  const slugs = getPostSlugs();
+  const posts = slugs.map((slug) => getPostBySlug(slug)).sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+  return posts;
 }

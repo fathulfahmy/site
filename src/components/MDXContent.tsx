@@ -1,6 +1,7 @@
-"use client";
-import { MDXRemote, MDXRemoteProps } from "next-mdx-remote";
+type MDXContentProps = {
+  content: string;
+};
 
-export default function MDXContent(props: MDXRemoteProps) {
-  return <MDXRemote {...props} />;
-}
+export const MDXContent = ({ content }: MDXContentProps) => {
+  return <div dangerouslySetInnerHTML={{ __html: content }} />;
+};
