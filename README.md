@@ -1,24 +1,47 @@
-## 🚀 Project Structure
+# OpenNext Starter
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-There's nothing special about `src/components/`, but that's where the Astro/React/Vue/Svelte/Preact components are.
+## Getting Started
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/*`, and type-check frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+Read the documentation at https://opennext.js.org/cloudflare.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Develop
 
-## 🧞 Commands
+Run the Next.js development server:
 
-All commands are run from the root of the project, from a terminal:
+```bash
+npm run dev
+# or similar package manager command
+```
 
-| Command                     | Action                                           |
-| :-------------------------- | :----------------------------------------------- |
-| `pnpm install`              | Installs dependencies                            |
-| `pnpm dev`                  | Starts local dev server at `localhost:4321`      |
-| `pnpm build`                | Build your production site to `./dist/`          |
-| `pnpm preview`              | Preview your build locally, before deploying     |
-| `pnpm astro ...`            | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help`      | Get help using the Astro CLI                     |
-| `pnpm build && pnpm deploy` | Deploy your production site to Cloudflare        |
-| `pnpm wrangler tail`        | View real-time logs for all Workers              |
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+## Preview
+
+Preview the application locally on the Cloudflare runtime:
+
+```bash
+npm run preview
+# or similar package manager command
+```
+
+## Deploy
+
+Deploy the application to Cloudflare:
+
+```bash
+npm run deploy
+# or similar package manager command
+```
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!

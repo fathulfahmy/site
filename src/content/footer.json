@@ -1,0 +1,15 @@
+{
+  "logo": "Fathul Fahmy",
+  "contact": {
+    "title": "Interested to work with me?",
+    "email": "fathulfahmy@protonmail.com"
+  },
+  "made_in": {
+    "title": "Made with React.js",
+    "subtitle": "Source Code →"
+  },
+  "copyright": {
+    "title": "Fathul©2025",
+    "subtitle": "All rights reserved"
+  }
+}

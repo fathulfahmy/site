@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "title": "Contact",
+    "subtitle": "I'm always open to new projects, collaborations, or a quick conversation about software engineering. If you have an idea in mind or simply want to connect, feel free to reach out."
+  },
+  "form": {
+    "name": {
+      "name": "contact_name",
+      "label": "Your name:",
+      "placeholder": "John Doe"
+    },
+    "email": {
+      "name": "contact_email",
+      "label": "Your email:",
+      "placeholder": "john@doe.com"
+    },
+    "message": {
+      "name": "contact_message",
+      "label": "Your message:",
+      "placeholder": "Enter the message..."
+    },
+    "button": "Submit"
+  },
+  "contact": {
+    "title": "Email directly at:",
+    "email": "fathulfahmy@protonmail.com"
+  }
+}

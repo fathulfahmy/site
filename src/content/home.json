@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "title": "Fathul is a Malaysia-based developer exploring how software and intelligent systems shape the way we interact and create.",
+    "subtitle": "His work blends form, function, and automation — always built on engineering and curiosity."
+  },
+  "featured": {
+    "title": "Featured Projects",
+    "cta": [
+      { "label": "Check all projects →", "href": "/projects" },
+      { "label": "Contact Me →", "href": "/contact", "isDesktopOnly": true }
+    ]
+  },
+
+  "about": {
+    "title": "About me",
+    "subtitle": "Fathul Fahmy",
+    "description_1": "I care about building digital experiences and intelligent systems that people actually want to use. Whether it's websites, ERP, CRM, or API,",
+    "description_2": "my approach is guided by curiosity, simplicity, and a constant search for better ways to solve problems through technology."
+  },
+  "services": ["Web Development", "Mobile Development", "API Development", "UI/UX Design", "System Deployment"],
+  "clients": ["Dipo Star Finance", "James King", "ChargeSini", "Caricarz"]
+}

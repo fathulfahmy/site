@@ -1,0 +1,27 @@
+{
+  "hero": {
+    "title": "I'm a developer passionate about creating purposeful digital experiences and intelligent solutions for businesses and communities.",
+    "subtitle": "My work blends software engineering with artificial intelligence, allowing me to craft solutions that work seamlessly."
+  },
+  "image": {
+    "src": "/content/about.jpg",
+    "alt": "About image"
+  },
+  "experiences": [
+    {
+      "company": "AsiaQuest",
+      "position": "Full Stack Developer",
+      "date": "From 2025"
+    },
+    {
+      "company": "Freelance / Open Source",
+      "position": "Software Engineer",
+      "date": "From 2023"
+    },
+    {
+      "company": "Webby",
+      "position": "Web Developer",
+      "date": "2024-2024"
+    }
+  ]
+}
