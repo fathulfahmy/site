@@ -5,17 +5,17 @@
   },
   "form": {
     "name": {
-      "name": "contact_name",
+      "name": "name",
       "label": "Your name:",
       "placeholder": "John Doe"
     },
     "email": {
-      "name": "contact_email",
+      "name": "email",
       "label": "Your email:",
       "placeholder": "john@doe.com"
     },
     "message": {
-      "name": "contact_message",
+      "name": "message",
       "label": "Your message:",
       "placeholder": "Enter the message..."
     },

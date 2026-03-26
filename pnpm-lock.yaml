@@ -7,6 +7,9 @@ settings:
 importers:
   .:
     dependencies:
+      "@emailjs/browser":
+        specifier: ^4.4.1
+        version: 4.4.1
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
@@ -154,6 +157,11 @@ packages:
     resolution:
       { integrity: sha512-LwdZHpScM4Qz8Xw2iKSzS+cfglZzJGvofQICy7W7v4caru4EaAmyUuO6BGrbyQ2mYV11W0U8j5mBhd14dd3B0A== }
     engines: { node: ">=6.9.0" }
+
+  "@emailjs/browser@4.4.1":
+    resolution:
+      { integrity: sha512-DGSlP9sPvyFba3to2A50kDtZ+pXVp/0rhmqs2LmbMS3I5J8FSOgLwzY2Xb4qfKlOVHh29EAutLYwe5yuEZmEFg== }
+    engines: { node: ">=14.0.0" }
 
   "@emnapi/core@1.8.1":
     resolution:
@@ -2938,6 +2946,8 @@ snapshots:
     dependencies:
       "@babel/helper-string-parser": 7.27.1
       "@babel/helper-validator-identifier": 7.28.5
+
+  "@emailjs/browser@4.4.1": {}
 
   "@emnapi/core@1.8.1":
     dependencies:
