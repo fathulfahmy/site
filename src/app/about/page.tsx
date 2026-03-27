@@ -1,24 +1,55 @@
+"use client";
+
 import { Hero } from "@/components/hero";
 import content from "@/content/about.json";
+import { motion, Variants } from "motion/react";
 
 export default function AboutPage() {
-  return (
-    <div>
-      <Hero>
-        <h1 className="text-xl lg:text-2xl xl:text-3xl">
-          {content.hero.title}&nbsp;
-          <span className="text-neutral-500">{content.hero.subtitle}</span>
-        </h1>
-      </Hero>
+  const container = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+        duration: 0.2,
+      },
+    },
+  };
 
-      <section className="flex flex-col lg:flex-row">
+  const item: Variants = {
+    hidden: { opacity: 0, y: 16 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: [0.22, 1, 0.36, 1],
+        duration: 0.8,
+      },
+    },
+  };
+
+  return (
+    <motion.div initial="hidden" animate="visible" variants={container}>
+      <motion.div variants={item}>
+        <Hero>
+          <h1 className="text-xl lg:text-2xl xl:text-3xl">
+            {content.hero.title}&nbsp;
+            <span className="text-neutral-500">{content.hero.subtitle}</span>
+          </h1>
+        </Hero>
+      </motion.div>
+
+      <motion.section variants={item} className="flex flex-col lg:flex-row">
         <div className="flex-1"></div>
         <div className="flex-2 pb-12">
           <img src={content.image.src} alt={content.image.alt} className="w-full" />
         </div>
-      </section>
+      </motion.section>
 
-      <section className="flex flex-col lg:flex-row xl:text-lg">
+      <motion.section variants={item} className="flex flex-col lg:flex-row xl:text-lg">
         <div className="flex-1 pb-6 lg:mb-0">
           <p className="text-lg xl:text-xl">Experience</p>
           <p className="text-neutral-500">2023 - 2025</p>
@@ -34,7 +65,7 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
-      </section>
-    </div>
+      </motion.section>
+    </motion.div>
   );
 }
